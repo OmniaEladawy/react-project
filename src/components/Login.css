@@ -1,9 +1,10 @@
-.container{
+form .container{
     width: 550px !important;
     padding: 30px 70px 50px !important;
     background-color: #fff;
     border-radius: 20px;
     text-align: left;
+    box-shadow: 2px 2px #0000000a, -2px -2px #0000000a;
 }
 
 h1 {

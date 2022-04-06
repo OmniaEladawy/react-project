@@ -41,24 +41,9 @@ function Login (){
     }
 
     return (
-        <form id="myForm" name="theForm" method="get" style={{backgroundColor:'#e0f1ff' , padding:'90px 0'}}>
+        <form id="myForm" name="theForm" method="get" style={{backgroundColor:'#e9ffff' , padding:'90px 0'}}>
             <div className="container">
                 <h1> Login </h1>
-                {/* <div className='inputRow' >
-                    <label htmlFor="name"> Name </label>
-                    <input
-                    required
-                    style={{width:'100%',height:'50px'}}
-                    placeholder="Enter your name"
-                    type="text"
-                    id="name"
-                    name="name"
-                    onChange={(e)=>{
-                        nameChanged(e);
-                    }}
-                    /><br />
-                    <span id="textSpan"> {name} </span> <br /><br />
-                </div> */}
                 <div className='inputRow'>
                     <label htmlFor="email"> Email </label>
                     <input
@@ -91,11 +76,11 @@ function Login (){
                     {password}
                     </span>
                 </div>
-                <h6 className='mx-5 my-4'>By signing up you accept our <span style={{color:'#1b9bcf'}}>Terms Of Use</span> </h6> 
+                <h6 className='mx-5 my-4'>By signing up you accept our <span style={{color:'#0da8a7'}}>Terms Of Use</span> </h6> 
                 <button type="submit" id="sub" >
                     Login
                 </button>
-                <h6 className='mx-5 mt-5'>Don't have account ? <NavLink to="/sign" className="fw-bold" style={{color:'#1b9bcf'}}>Sign Up here</NavLink> </h6> 
+                <h6 className='mx-5 mt-5'>Don't have account ? <NavLink to="/sign" className="fw-bold" style={{color:'#0da8a7'}}>Sign Up here</NavLink> </h6> 
             </div>
         </form>
     )

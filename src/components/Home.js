@@ -1,49 +1,87 @@
-import React from "react";
-import Cards from "./Cards";
+import {NavLink} from "react-router-dom";
+import ProductCarousel from "./ProductCarousel";
+import Slider from "./Slider";
+import res from '../imgs/respiratory.jpeg';
+import anes from '../imgs/anesthesia.jpeg';
+import cath from '../imgs/catheter.jpeg';
+import woven from '../imgs/non-woven.jpeg';
+import acc from '../imgs/Accessory.jpeg';
+import others from '../imgs/Others.jpeg';
+import panner from '../imgs/panner.jpeg';
 
 function Home(){
-  let children = [
-    {
-      id:1,
-      title: 'Leanne Graham',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApbxj4499GJJWMYvKUVnzMUBJBt1b_Aob0A&usqp=CAU'
-    },
-    {
-      id:2,
-      title: 'Ervin Howell',
-      img: 'https://previews.123rf.com/images/topvectors/topvectors1910/topvectors191000180/130828177-emotion-of-laughter-on-the-face-of-a-brunette-woman-vector-illustration-.jpg?fj=1'
-    },
-    {
-      id:3,
-      title: 'Kurtis Weissnat',
-      img: 'https://previews.123rf.com/images/yupiramos/yupiramos2004/yupiramos200436847/145498923-.jpg?fj=1'
-    },
-    {
-      id:4,
-      title: 'Nicholas Runolfsdottir V',
-      img: 'https://pickaface.net/gallery/avatar/jquan0755a199bfcb71d.png'
-    },
-    {
-      id:5,
-      title: 'Glenna Reichert',
-      img: 'https://i.pinimg.com/564x/77/70/5c/77705c2de53d8306ebed9ffda8f9986a.jpg'
-    },
-    {
-      id:6,
-      title: 'Clementina DuBuque',
-      img: 'https://res.cloudinary.com/graham-media-group/image/upload/f_auto/q_auto/c_scale,w_792/v1/media/gmg/X462YQ4HIJEGHHX2I3LXRV4G7A.jpg?_a=ATABlAA0'
-    },
-  ]
   return(
-    <div className='mt-5 p-5 d-flex flex-wrap'>
-    {
-      children.map((child,index) => {
-        return (
-          <Cards key={child.id} title={child.title} img={child.img}/>
-        )
-      })
-    }
+    <>
+    <Slider />
+
+    <div className="container categories" style={{textAlign:'center' , padding:'100px 0'}}>
+      <div className="row">
+        <div className="col-2">
+          <NavLink to="/respiratory">
+            <img src={res} alt="Respiratory" />
+            <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Respiratory</h5>
+          </NavLink>
+        </div>
+        <div className="col-2">
+          <NavLink to="/anesthesia">
+            <img src={anes} alt="Anesthesia" />
+            <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Anesthesia</h5>
+          </NavLink>
+        </div>
+        <div className="col-2">
+          <NavLink to="/catheter">
+            <img src={cath} alt="Catheter" />
+            <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Catheter</h5>
+          </NavLink>
+        </div>
+        <div className="col-2">
+        <NavLink to="/nonwoven">
+          <img src={woven} alt="non-woven" />
+          <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Non-Woven</h5>
+        </NavLink> 
+        </div>
+        <div className="col-2">
+          <NavLink to="/accessory">
+            <img src={acc} alt="Accessory" />
+            <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Accessory</h5>
+          </NavLink>
+        </div>
+        <div className="col-2">
+          <NavLink to="/others">
+            <img src={others} alt="Others" />
+            <h5 className="my-3 fw-bold" style={{color:'#104773'}}>Others</h5>
+          </NavLink>
+        </div>
+      </div>
     </div>
+
+    <div className="container p-5 my-5" style={{backgroundColor:'#fff' , borderRadius:'20px'}}>
+      <h3 className="secTitle" style={{marginLeft:'15px' }}> All Products </h3>
+      
+      <hr style={{marginLeft:'15px'}}/>
+      <ProductCarousel />  
+    </div>
+
+    <div className="container p-5 my-5" style={{backgroundColor:'#fff' , borderRadius:'20px'}}>
+      <h3 className="secTitle" style={{marginLeft:'15px' }}> Respiratory </h3>
+      
+      <hr style={{marginLeft:'15px'}}/>
+      <ProductCarousel />  
+    </div>
+
+    <div style={{textAlign: 'center'}}>
+      <img src={panner} alt="panner" />
+    </div>
+
+    <div className="container p-5 my-5" style={{backgroundColor:'#fff' , borderRadius:'20px'}}>
+      <h3 className="secTitle" style={{marginLeft:'15px' }}> Catheter </h3>
+      
+      <hr style={{marginLeft:'15px'}}/>
+      <ProductCarousel />  
+    </div>
+    
+    </>
+    
   )
 }
 

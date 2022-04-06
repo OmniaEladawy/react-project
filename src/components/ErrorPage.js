@@ -1,11 +1,14 @@
 import React from "react";
+import logo from "../imgs/error.gif";
 
 function ErrorPage(){
   return(
       <>
-     
-        <h1 className="bg-danger" style={{color:'#fff'  , margin:'205px 0'}}>404 Page not found</h1> 
+      <div>
+        <img src={logo} width='100%' height='408px'/>
+
       
+      </div>
       </>
   )
 }

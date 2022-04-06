@@ -41,7 +41,7 @@ function Sign (){
     }
 
     return (
-        <form id="myForm" name="theForm" method="get" style={{backgroundColor:'#e0f1ff' , padding:'90px 0'}}>
+        <form id="myForm" name="theForm" method="get" style={{backgroundColor:'#e9ffff' , padding:'90px 0'}}>
             <div className="container">
                 <h1> Sign Up </h1>
                 <div className='inputRow' style={{height: '121.5px'}}>
@@ -108,11 +108,11 @@ function Sign (){
                     {password}
                     </span>
                 </div>
-                <h6 className='mx-5 my-4'>By signing up you accept our <span style={{color:'#1b9bcf'}}>Terms Of Use</span> </h6> 
+                <h6 className='mx-5 my-4'>By signing up you accept our <span style={{color:'#0da8a7'}}>Terms Of Use</span> </h6> 
                 <button type="submit" id="sub" >
                     Sign Up
                 </button>
-                <h6 className='mx-5 mt-5'>Have account ? <NavLink to="/login" className="fw-bold" style={{color:'#1b9bcf'}}>Login here</NavLink> </h6> 
+                <h6 className='mx-5 mt-5'>Have account ? <NavLink to="/login" className="fw-bold" style={{color:'#0da8a7'}}>Login here</NavLink> </h6> 
             </div>
         </form>
     )

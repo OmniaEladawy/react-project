@@ -5,7 +5,7 @@ import logo from "../imgs/logo.png";
 
 function Footer(){
     return(
-        <footer expand="lg" style={{backgroundColor:'#c1e3ff' , boxShadow:'-2px -2px #1047733b'}} className="p-4">
+        <footer expand="lg" style={{backgroundColor:'#d7f2f5' , boxShadow:'-2px -2px #1047733b'}} className="p-4">
         <Container fluid>
             <div className="row">
                 <NavLink to="/home" className="col-3"><img src={logo} alt="logo" style={{width:160}}/>  </NavLink>

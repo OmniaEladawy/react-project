@@ -162,3 +162,22 @@ hr {
   font-weight: bold;
   justify-content: end;
 }
+
+.prodHr{
+  margin: 1rem 0 !important;
+} 
+
+.prodBtn{
+  padding: 10px 15px !important;
+}
+
+.social i{
+  color:#0da8a7;
+  margin-right: 10px;
+}
+
+.social a{
+  text-decoration: none;
+  color: #104773;
+  font-weight: bold;
+}

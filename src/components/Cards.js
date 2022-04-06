@@ -10,6 +10,10 @@ function Cards(props){
         let navigateProfile = ()=>{
           navigate('/cart');
         }
+
+        let navigateProduct = ()=>{
+          navigate('/productdetails');
+        }
         
         return(
           <Card className='col-3 mx-3 text-center border-2 mb-5' style={{width:'280px'}}>
@@ -21,6 +25,7 @@ function Cards(props){
                 {price}
                 </p>
               <Button variant="primary" className='my-3 fw-bold px-3' onClick={navigateProfile} style={{boxShadow:'none' , border:'none'}}><i className="fa-solid fa-cart-shopping mx-1"></i> Add to cart</Button>
+              <Button variant="primary" className='my-3 fw-bold px-3' onClick={navigateProduct} style={{boxShadow:'none' , border:'none' , textAlign:'center'}}><i className="fa-solid fa-eye mx-2"></i><span style={{marginRight:'10px'}}>View</span></Button>
             </Card.Body>
           </Card>
         )

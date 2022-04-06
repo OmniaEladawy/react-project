@@ -24,7 +24,7 @@ function Header(){
                 <NavLink to="/accessory" className="d-block p-2 dropItem" style={{color:'#104773'}}>Accessory</NavLink>
                 <NavLink to="/others" className="d-block p-2 dropItem" style={{color:'#104773'}}>Others</NavLink>
               </NavDropdown>
-              <NavLink to="/profile" className="fw-bold fs-5 hLink">Contact Us</NavLink>
+              <NavLink to="/contact" className="fw-bold fs-5 hLink">Contact Us</NavLink>
           </Nav>
           <Nav
             className="me-2">

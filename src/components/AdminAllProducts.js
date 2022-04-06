@@ -1,6 +1,17 @@
 import Cards from "./Cards";
+import {useNavigate} from 'react-router-dom';
 
 function AdminAllProducts() {
+
+  let navigate = useNavigate();
+
+        let addproduct = ()=>{
+          navigate('/addproduct');
+        }
+
+        let deleteproduct = ()=>{
+          navigate('/deleteproduct');
+        }
 
     let products = [
         {
@@ -83,8 +94,8 @@ function AdminAllProducts() {
             <div className="row">
                 <h3 className="secTitle d-inline-block col-2" style={{marginLeft:'15px' }}> All Products </h3>
                 <div className=" col-9" style={{display: 'flex' , justifyContent: 'end' , height: '40px' , marginLeft: '89px'}}>
-                  <button className="adminBtn" style={{width:'150px'}}> Add Product </button>
-                  <button className="adminBtn" style={{width:'150px'}}> Delete Product </button>
+                  <button className="adminBtn" style={{width:'150px'}} onClick={addproduct}> Add Product </button>
+                  <button className="adminBtn" style={{width:'150px'}} onClick={deleteproduct}> Delete Product </button>
                 </div>
                 
                 <hr style={{marginLeft:'15px'}}/>

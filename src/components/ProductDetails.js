@@ -1,14 +1,23 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
-
-
+import {useNavigate ,useParams} from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 function ProductDetails(){
-
+  const [products, setproducts] = useState({});
+  const {id} = useParams();
+  console.log(id);
   let navigate = useNavigate();
-
-  let navigateCart = ()=>{
+  let navigateCart = (id)=>{
     navigate('/cart');
+   
   }
+  useEffect(() => {
+    const fetch = async () => {
+      const { data} = await axios.get(`/api/products/${id}`);
+      setproducts(data)
+    }
+    console.log(fetch());
+  }, []);
   
   return(
       <>
@@ -20,7 +29,7 @@ function ProductDetails(){
         <div className="col-lg-4">
           <div className="card mb-4">
             <div className="card-body text-center" >
-              <img src="https://mymedicalshope.com/public/uploads/all/tSJtGshrMmtaKK1rJ2uztPKxq9GFKafY81faTJ3n.jpg" alt="product"/>
+              <img src={products.image} alt="product" style={{width:'100px' ,height:'500px' }}/>
             </div>
           </div>
         </div>
@@ -39,7 +48,8 @@ function ProductDetails(){
                   <p className="mb-0 fw-bold" style={{color:'#104773'}}>Category</p>
                 </div>
                 <div className="col-sm-9">
-                  <p className="text-muted mb-0">Respiratory</p>
+                  <p className="text-muted mb-0">{products.category
+}</p>
                 </div>
               </div>
               <hr className="prodHr"/>
@@ -48,7 +58,8 @@ function ProductDetails(){
                   <p className="mb-0 fw-bold" style={{color:'#104773'}}>Price</p>
                 </div>
                 <div className="col-sm-9">
-                  <p className="mb-0 fw-bold" style={{color:'#0da8a7'}}>22.000 EG</p>
+                  <p className="mb-0 fw-bold" style={{color:'#0da8a7'}}>{products.
+price}</p>
                 </div>
               </div>
               <hr className="prodHr"/>
@@ -57,7 +68,7 @@ function ProductDetails(){
                   <p className="mb-0 fw-bold" style={{color:'#104773'}}>Count in stock</p>
                 </div>
                 <div className="col-sm-9">
-                  <p className="text-muted mb-0">3</p>
+                  <p className="text-muted mb-0">{products.countInStock}</p>
                 </div>
               </div>
               <hr className="prodHr"/>
@@ -66,7 +77,7 @@ function ProductDetails(){
                   <p className="mb-0 fw-bold" style={{color:'#104773'}}>Description</p>
                 </div>
                 <div className="col-sm-9">
-                  <p className="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo nisl velit, eu blandit sapien aliquet in. Nam at neque pharetra, posuere diam vel, placerat massa. Vivamus non enim malesuada, ullamcorper nisi in, vestibulum dui. Donec eu hendrerit velit, placerat mattis libero. Aliquam consectetur consequat vehicula. Morbi iaculis nisi non felis ornare varius. Vivamus sed orci fringilla, suscipit nulla id, malesuada ipsum.</p>
+                  <p className="text-muted mb-0">{products.description}</p>
                 </div>
                 <div className="d-flex justify-content-center my-5">
                 <button type="button" className="btn mx-3 prodBtn" style={{border:'none' , outLine:'none' , boxShadow:'none' , color:'#fff' , fontWeight:'bold'}}><i className="fa-solid fa-cart-shopping mx-2"></i><span>Add to cart</span></button>

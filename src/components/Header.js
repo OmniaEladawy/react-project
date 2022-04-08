@@ -5,6 +5,12 @@ import {NavLink} from "react-router-dom";
 
 
 function Header(){
+
+
+  let search = () => {
+   
+}
+
   return(
     <Navbar expand="lg" style={{backgroundColor:'#d7f2f5' , boxShadow:'2px 2px #1047733b'}}>
       <Container fluid>
@@ -31,7 +37,7 @@ function Header(){
               <div id="navbar-search-autocomplete" className="form-outline">
                 <input type="search" id="form1" className="form-control" placeholder="Search" style={{width: '330px'}}/>
               </div>
-              <button type="button" className="btn" style={{width: '10px' , height: '37px' , marginLeft: '-10px'}} id="btnSearch">
+              <button type="button" className="btn" style={{width: '10px' , height: '37px' , marginLeft: '-10px'}} id="btnSearch" onClick={search}>
                 <i className="fas fa-search" style={{position: 'absolute' , top: '65px' , right: '285px'}}></i>
               </button>
             <NavLink to="/login" className="fw-bold fs-5 mx-5"><i className="fa-solid fa-cart-shopping fa-lg"></i><div style={{width:'28px',height:'28px',backgroundColor: '#104773', position: 'absolute', borderRadius: '50%', top: '27px', right: '180px' , color:'#fff'}}>

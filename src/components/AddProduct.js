@@ -30,18 +30,23 @@ function AddProduct (){
 const data={name:nameinputValue,price:priceinputValue,image:imageinputValue 
     ,count:CountinputValue ,Category:CategoryinputValue ,Description:DescriptioninputValue};
     console.log(data);
-const token = JSON.parse(localStorage.getItem('token'));
-// let navigate = useNavigate();
-// let navigatehome = navigate('/home');
-// navigatehome();
-  
+// const token = JSON.parse(localStorage.getItem('token'));
+let navigate = useNavigate();
+let navigatehome = navigate('/allproducts');
+
+const bodyParameters = { "name" :nameinputValue,
+"price": priceinputValue,
+"description" : DescriptioninputValue,
+"image" : imageinputValue,
+"category" : CategoryinputValue ,
+"countInStock" : CountinputValue
+}
     let formhandeler=()=>{
-            axios.post('/api/products', token ,data)
+            axios.post('/api/products' ,bodyParameters)
               .then(res => {
-                if (res.status === 200)
+              
                   alert('Student successfully created')
-                else
-                  Promise.reject()
+                //   navigatehome();
               })
               .catch(err => {alert('Something went wrong');
             })
@@ -80,7 +85,7 @@ const token = JSON.parse(localStorage.getItem('token'));
                     <input
                     required
                     style={{width:'100%',height:'50px'}}
-                    type="file"
+                    type="text"
                     id="img"
                     name="img"
                     onChange={(e)=>{imageinput(e);}}

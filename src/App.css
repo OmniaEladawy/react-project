@@ -118,12 +118,12 @@ footer i {
 }
 
 .carousel-control-prev-icon {
-	margin-left: -110px;
+	margin-left: -126px;
 	background-color: #0da8a7;
 }
 
 .carousel-control-next-icon {
-	margin-right: -110px;
+	margin-right: -126px;
 	background-color: #0da8a7;
 }
 
@@ -180,4 +180,23 @@ hr {
   text-decoration: none;
   color: #104773;
   font-weight: bold;
+}
+
+.addBtn {
+  background-color: #288e69 !important;
+}
+
+.removeBtn {
+  background-color: #c83d3d !important;
+}
+
+.addBtn , .removeBtn {
+  padding: 5px !important;
+  border: none;
+  box-shadow: none;
+  font-Size: 25px ;
+  font-weight: bold ;
+  width: 80px ; 
+  color: #fff ;
+  margin-right: 10px;
 }

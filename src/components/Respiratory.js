@@ -1,7 +1,8 @@
 import Cards from "./Cards";
 import axios from "axios";
 import { useEffect, useState } from "react";
-function Respiratory() {
+function Respiratory(props) {
+  const {onAdd} = props;
   const [products, setproducts] = useState([]);
   useEffect(() => {
     const fetch = async () => {
@@ -20,7 +21,7 @@ function Respiratory() {
           {
             products.filter(productfil => productfil.category === fillter).map((product, index) => {
               return (
-                <Cards key={index} title={product.name} img={product.image} price={product.price} />
+                <Cards key={product._id} product={product} onAdd={onAdd} />
               )
             })
           }

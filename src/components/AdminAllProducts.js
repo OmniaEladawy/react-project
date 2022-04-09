@@ -2,7 +2,8 @@ import Cards from "./Cards";
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
-function AdminAllProducts() {
+function AdminAllProducts(props) {
+  const {onAdd}=props;
 
   let navigate = useNavigate();
 
@@ -36,7 +37,7 @@ function AdminAllProducts() {
                 {
                    products.map((product,index) => {
                     return (
-                      <Cards key={index}  id={product._id} title={product.name} img={product.image} price={product.price} />
+                      <Cards key={product._id} product={product} onAdd={onAdd}/>
                     )
                   })
                 }   

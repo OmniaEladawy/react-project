@@ -1,7 +1,7 @@
 import Cards from "./Cards";
 import axios from "axios";
 import { useEffect, useState } from "react";
-function Accessory() {
+function Accessory(props) {
   const [products,setproducts]=useState([]);
   useEffect(()=>{
   const fetch= async()=>{
@@ -11,6 +11,7 @@ function Accessory() {
     console.log( fetch());
   },[]);
   const fillter=" Accessory        ";
+  const {onAdd}=props;
     return (
 	    <>
         <div className="container p-5 my-5" style={{backgroundColor:'#fff' , borderRadius:'20px'}}>
@@ -20,7 +21,7 @@ function Accessory() {
                 {
                     products.filter(productfil => productfil.category===fillter).map((product,index) => {
                         return (
-                          <Cards key={index} title={product.name} img={product.image}  price={product.price}/>  
+                          <Cards key={product._id} product={product} onAdd={onAdd}/>  
                         )
                     }) 
                 }   

@@ -19,31 +19,61 @@ import Cart from './components/Cart';
 import Contact from './components/ContactUs';
 import AddProduct from './components/AddProduct';
 import DeleteProduct from './components/DeleteProduct';
+import {useState,useEffect} from 'react';
+import axios from "axios";
 
 
 function App() {
+  const [products, setproducts] = useState([]);
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await axios.get('/api/products')
+      setproducts(data)
+    }
+    console.log(fetch());
+  }, []);
+
+ 
+  const [cartItems,setCartItems]=useState([]); 
+  const onAdd = (product)=>{
+    const exist = cartItems.find(item => item._id === product._id);
+    if(exist){
+      setCartItems(cartItems.map(item => item._id === product._id ? {...exist , qty: exist.qty +1} : item));
+    }else{
+      setCartItems([...cartItems , {...product , qty : 1}]);
+    }
+  };
+
+  const onRemove = (product)=>{
+    const exist = cartItems.find(item => item._id === product._id);
+    if(exist.qty === 1){
+      setCartItems(cartItems.filter(item => item._id !== product._id));
+    }else{
+      setCartItems(cartItems.map(item => item._id === product._id ? {...exist , qty: exist.qty -1} : item));
+    }
+  };
 
   return (
     <>
-    <Header/>
+    <Header cartItems={cartItems} countItems={cartItems.length}/>
     <Routes>
       <Route path='/home' element={<Home />}/>
       <Route path='/' element={<Navigate  to='/home'/>}/>
       <Route path='/contact' element={<Contact />}/>
-      <Route path='/allproducts' element={<AllProducts />}/>
-      <Route path='/respiratory' element={<Respiratory />}/>
-      <Route path='/catheter' element={<Catheter />}/>
-      <Route path='/anesthesia' element={<Anesthesia />}/>
-      <Route path='/nonwoven' element={<NonWoven />}/>
-      <Route path='/accessory' element={<Accessory />}/>
-      <Route path='/Others' element={<Others />}/>
-      <Route path='/adminallproducts' element={<AdminAllProducts />}/>
-      <Route path='/adminallproducts/:id' element={<ProductDetails />}/>
+      <Route path='/allproducts' element={<AllProducts onAdd={onAdd}/>}/>
+      <Route path='/respiratory' element={<Respiratory onAdd={onAdd}/>}/>
+      <Route path='/catheter' element={<Catheter onAdd={onAdd}/>}/>
+      <Route path='/anesthesia' element={<Anesthesia onAdd={onAdd}/>}/>
+      <Route path='/nonwoven' element={<NonWoven onAdd={onAdd}/>}/>
+      <Route path='/accessory' element={<Accessory onAdd={onAdd}/>}/>
+      <Route path='/Others' element={<Others onAdd={onAdd}/>}/>
+      <Route path='/adminallproducts' element={<AdminAllProducts onAdd={onAdd}/>}/>
+      <Route path='/adminallproducts/:id' element={<ProductDetails onAdd={onAdd}/>}/>
       <Route path='/productdetails' element={<ProductDetails />}/>
-      <Route path='/productdetails/:id' element={<ProductDetails />}/>
+      <Route path='/productdetails/:id' element={<ProductDetails onAdd={onAdd}/>}/>
       <Route path='/addproduct' element={<AddProduct />}/>
       <Route path='/deleteproduct' element={<DeleteProduct />}/>
-      <Route path='/cart' element={<Cart />}/>
+      <Route path='/cart' element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>}/>
       <Route path='/login' element={<Login />}/>
       <Route path='/sign' element={<Sign />}/>
       <Route path='*' element={<ErrorPage />}/>

@@ -1,25 +1,25 @@
 import {Carousel} from "react-bootstrap";
 
-function ProductCarousel() {
+function ProductCarouselcath() {
 
     let products1 = [
         {
           id:1,
-          title: "Oxygen Cannula",
+          title: "Disposable Foley",
           price: '50 EG',
-          img: 'http://cdn.shopify.com/s/files/1/0045/4216/9201/products/72598bd3dd93dd99faba4b5283341fca_1200x1200.png?v=1571730897'
-        },
-        {
-          id:2,
-          title: 'Disposable Foley',
-          price: '100 EG',
           img: 'https://p.globalsources.com/IMAGES/PDT/B5155022344/Medical-Foley-Catheter-2-way.jpg'
         },
         {
+          id:2,
+          title: 'Disposable Silicone',
+          price: '100 EG',
+          img: 'https://www.oxyaider.co.za/wp-content/uploads/2021/11/laryngeal-mask-airway.jpeg'
+        },
+        {
           id:3,
-          title: 'Disposable bed sheet',
+          title: 'Connecting tubes',
           price: '70 EG',
-          img: 'https://www.u-phten.com/Uploads/pro/5c1b3602f3d5e.jpg'
+          img: 'https://image.made-in-china.com/202f0j00zuyfEmZjlbcF/Ce-ISO-Approved-Suction-Connecting-Tube-with-Yankauer-Handle.jpg'
         },
         {
           id:4,
@@ -35,9 +35,9 @@ function ProductCarousel() {
         },
         {
           id:6,
-          title: 'Humidification Bottle',
+          title: 'Stomach Tube',
           price: '90 EG',
-          img: 'https://image.made-in-china.com/44f3j00WjdTVlsKSebi/200ml-Medical-Oxygen-Humidifier-Bottle.jpg'
+          img: 'https://5.imimg.com/data5/AK/KX/MY-13168396/stomach-tube-500x500.jpg'
         }
       ]
 
@@ -58,19 +58,19 @@ function ProductCarousel() {
             id:9,
             title: 'BVF',
             price: '90 EG',
-            img: 'https://5.imimg.com/data5/IH/SV/YE/SELLER-59601336/hme-bvf-filter-500x500.jpg'
+            img: 'https://d35cnulyv0pa6p.cloudfront.net/products/images/2017/26906/tracheal_tube_without_cuff.jpg?u8Er8Yw_5qEe2jOo2bmGO7l88avdYmRd='
           },
           {
             id:10,
             title: 'Urine bag',
             price: '90 EG',
-            img: 'https://image.made-in-china.com/44f3j00WjdTVlsKSebi/200ml-Medical-Oxygen-Humidifier-Bottle.jpg'
+            img: 'https://5.imimg.com/data5/IH/SV/YE/SELLER-59601336/hme-bvf-filter-500x500.jpg'
           },
           {
             id:11,
-            title: 'Urine bag',
+            title: 'Berman Airway',
             price: '20 EG',
-            img: 'https://cdn.shopify.com/s/files/1/0293/6432/2403/products/romsons-romsons-r-4-urine-bag-with-bottom-outlet-i46-402-db-1092-22998791782573.jpg?v=1623941156'
+            img: 'https://www.avermed.com/v/vspfiles/photos/1-1508-2.jpg?v-cache=1361040041'
           },
           {
             id:12,
@@ -155,4 +155,4 @@ function ProductCarousel() {
     );
   }
   
-  export default ProductCarousel;
+  export default ProductCarouselcath;

@@ -8,6 +8,8 @@ import woven from '../imgs/non-woven.jpeg';
 import acc from '../imgs/Accessory.jpeg';
 import others from '../imgs/Others.jpeg';
 import panner from '../imgs/panner.jpeg';
+import ProductCarouselres from "./ProductCarouselres";
+import ProductCarouselcath from "./ProductCarouselcath";
 
 function Home(){
   return(
@@ -66,7 +68,7 @@ function Home(){
       <h3 className="secTitle" style={{marginLeft:'15px' }}> Respiratory </h3>
       
       <hr style={{marginLeft:'15px'}}/>
-      <ProductCarousel />  
+      <ProductCarouselres />  
     </div>
 
     <div style={{textAlign: 'center'}}>
@@ -77,7 +79,7 @@ function Home(){
       <h3 className="secTitle" style={{marginLeft:'15px' }}> Catheter </h3>
       
       <hr style={{marginLeft:'15px'}}/>
-      <ProductCarousel />  
+      <ProductCarouselcath />  
     </div>
     
     </>

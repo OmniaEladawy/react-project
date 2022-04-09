@@ -1,7 +1,7 @@
 import Cards from "./Cards";
 import axios from "axios";
 import { useEffect, useState } from "react";
-function AllProducts() {
+function AllProducts(props) {
   const [products, setproducts] = useState([]);
   useEffect(() => {
     const fetch = async () => {
@@ -10,6 +10,9 @@ function AllProducts() {
     }
     console.log(fetch());
   }, []);
+
+  const {onAdd}=props;
+
   return (
     <>
       <div className="container p-5 my-5" style={{ backgroundColor: '#fff', borderRadius: '20px' }}>
@@ -19,7 +22,7 @@ function AllProducts() {
           {
             products.map((product,index) => {
               return (
-                <Cards key={product.id} id={product._id} title={product.name} img={product.image} price={product.price} />
+                <Cards key={product._id} product={product} onAdd={onAdd} />
               )
             })
           }

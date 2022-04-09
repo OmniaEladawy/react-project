@@ -24,6 +24,6 @@ app.use(notFound)
 
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT|| 5000;
 const NODE_ENV = process.env.NODE_ENV;
 app.listen(PORT, console.log(`server running in ${NODE_ENV} on port ${PORT}`));

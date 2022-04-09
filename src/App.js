@@ -30,7 +30,7 @@ function App() {
       const { data } = await axios.get('/api/products')
       setproducts(data)
     }
-    console.log(fetch());
+    // console.log(fetch());
   }, []);
 
  
@@ -52,13 +52,13 @@ function App() {
       setCartItems(cartItems.map(item => item._id === product._id ? {...exist , qty: exist.qty -1} : item));
     }
   };
-
+ 
   return (
     <>
     <Header cartItems={cartItems} countItems={cartItems.length}/>
     <Routes>
       <Route path='/home' element={<Home />}/>
-      <Route path='/' element={<Navigate  to='/home'/>}/>
+      <Route path='/' element={<Navigate  to='/Sign'/>}/>
       <Route path='/contact' element={<Contact />}/>
       <Route path='/allproducts' element={<AllProducts onAdd={onAdd}/>}/>
       <Route path='/respiratory' element={<Respiratory onAdd={onAdd}/>}/>
@@ -73,6 +73,7 @@ function App() {
       <Route path='/productdetails/:id' element={<ProductDetails onAdd={onAdd}/>}/>
       <Route path='/addproduct' element={<AddProduct />}/>
       <Route path='/deleteproduct' element={<DeleteProduct />}/>
+      <Route path='/deleteproduct/:id' element={<DeleteProduct  />}/>
       <Route path='/cart' element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>}/>
       <Route path='/login' element={<Login />}/>
       <Route path='/sign' element={<Sign />}/>

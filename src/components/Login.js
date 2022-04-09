@@ -1,47 +1,47 @@
 import './Login.css';
-import React , {useState} from 'react';
-import {NavLink} from "react-router-dom";
-
+import React , {useState,useEffect} from 'react';
+import {NavLink ,useNavigate} from "react-router-dom";
+import axios from "axios";
 function Login (){
-    let [name,setName] = useState("");
     let [password,setPassword] = useState("");
     let [email,setEmail] = useState("");
-
-    let nameChanged = (e)=>{
-        let reg = /^[a-zA-Z ]{3,50}$/;
-        if(!reg.test(e.target.value)){
-            setName("Not valid name");
-            e.target.style.borderColor='red';
-        }else{
-            setName("");
-            e.target.style.borderColor='green';
-        }
-    }
-
-    let passwordChanged = (e)=>{
-        if(e.target.value.length < 8){
-            setPassword("Not valid password");
-            e.target.style.borderColor='red';
-        }else{
-            setPassword("");
-            e.target.style.borderColor='green';
-        }  
-    }
-
-    let emailChanged = (e)=>{
-        if(e.target.value.indexOf("@") > 1 &&
-        e.target.value.indexOf(".", e.target.value.indexOf("@")) >=
-        e.target.value.indexOf("@") + 1){
-            setEmail("");
-            e.target.style.borderColor='green';
-        }else{
-            setEmail("Not valid email");
-            e.target.style.borderColor='red';
-        }
-    }
+    let navigate = useNavigate();
+    let navigatehome = ()=>{
+        navigate('/home');
+      }
+    const data = { email:email,password:password};
+    console.log(data);
+   
+        let formhandeler  = async (e) => {
+                e.preventDefault();
+                try {
+                  let res = await fetch("/api/users/login", {
+                    method: "POST",
+                    headers:{ "Content-Type" : "application/json"},
+                    body: JSON.stringify({
+                      email: email,
+                      password:password,
+                    }),
+                  });
+                  let resJson = await res.json();
+                  localStorage.setItem('token',JSON.stringify(resJson) );
+                  console.log(  localStorage.setItem('token',JSON.stringify(resJson) ));
+                  if (res.status === 200) {
+                    setEmail("");
+                    setPassword("");
+                    alert(' successfully login');
+                  } else {
+                    alert('Something went wrong')
+                  }
+                } catch (err) {
+                  console.log(err);
+                }
+                navigatehome();
+              };
 
     return (
-        <form id="myForm" name="theForm" method="get" style={{backgroundColor:'#e9ffff' , padding:'90px 0'}}>
+        <form id="myForm" name="theForm" method="get"  onSubmit={formhandeler}
+        style={{backgroundColor:'#e9ffff' , padding:'90px 0'}} >
             <div className="container">
                 <h1> Login </h1>
                 <div className='inputRow'>
@@ -53,11 +53,9 @@ function Login (){
                     type="Email"
                     id="email"
                     name="email"
-                    onChange={(e)=>{
-                        emailChanged(e);
-                    }}
+                    onChange={(e) => setEmail(e.target.value)
+                    }
                     /><br />
-                    <span id="emailSpan"> {email} </span>
                 </div>
                 <div className='inputRow'>
                     <label htmlFor="password"> Password </label>
@@ -68,16 +66,13 @@ function Login (){
                     type="password"
                     id="password"
                     name="password"
-                    onChange={(e)=>{
-                        passwordChanged(e);
-                    }}
+                    onChange={(e) => setPassword(e.target.value)
+                    }
                     /><br />
-                    <span id="passSpan">
-                    {password}
-                    </span>
+                    
                 </div>
                 <h6 className='mx-5 my-4'>By signing up you accept our <span style={{color:'#0da8a7'}}>Terms Of Use</span> </h6> 
-                <button type="submit" id="sub" >
+                <button type="submit" id="sub"  >
                     Login
                 </button>
                 <h6 className='mx-5 mt-5'>Don't have account ? <NavLink to="/sign" className="fw-bold" style={{color:'#0da8a7'}}>Sign Up here</NavLink> </h6> 

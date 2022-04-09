@@ -6,7 +6,6 @@ function ProductDetails(props){
   const {onAdd}=props;
   const [products, setproducts] = useState({});
   const {id} = useParams();
- 
   let navigate = useNavigate();
   let navigateCart = ()=>{
     navigate('/cart');

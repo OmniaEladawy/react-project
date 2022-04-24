@@ -10,6 +10,11 @@ The Application will be e-commerce website you can : <br>
 - filter products based on it's category
 - add products in your cart
 
+### Technologies used:
+-React js
+-Node js
+-bootstrap 5
+
 ### Run :
 
 To run the project just run this commands in your terminal

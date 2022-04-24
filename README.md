@@ -12,12 +12,12 @@ The Application will be e-commerce website you can : <br>
 
 ### Run :
 
-To run DBMS just run the script in your terminal
+To run the project just run this commands in your terminal
 
 ```
-`npm install`
+npm install
 
-`npm start`
+npm start
 
 ```
 

@@ -11,9 +11,9 @@ The Application will be e-commerce website you can : <br>
 - add products in your cart
 
 ### Technologies used:
--React js <br>
--Node js <br>
--bootstrap 5 <br>
+- React js <br>
+- Node js <br>
+- bootstrap 5 <br>
 
 ### Run :
 

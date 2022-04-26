@@ -27,13 +27,11 @@ npm start
 ```
 
 #### Created by :
-Nayra Elsalamony <br>
-Mahmoud Majid <br>
-Omnia Osama Eladawy <br>
-Abdelfattah Omar <br>
-Marwa Ezzat Mohamed <br>
-Reem Elbakry <br>
+[Nayra Elsalamony](https://github.com/nayraelsalamony) <br>
+[Mahmoud Majid](https://github.com/Mahmoud-Majid) <br>
+[Omnia Eladawy](https://github.com/OmniaEladawy) <br>
+[Abdelfattah Omar](https://github.com/AbdelfattahOmar) <br>
+[Marwa Ezzat](https://github.com/MarwaEzzatMo) <br>
+[Reem Elbakry](https://github.com/reem-elbakry) <br>
 
-
-
-ITI intake 42
+ITI Intake 42

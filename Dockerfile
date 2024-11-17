@@ -1,4 +1,4 @@
-FROM  node:21.3-alpine
+FROM  node:21.7.3-alpine
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
